@@ -1,0 +1,8 @@
+select
+    CAR_TYPE,
+    count(CAR_ID) CARS
+from CAR_RENTAL_COMPANY_CAR
+where 
+    OPTIONS like '%시트%'
+group by 1
+order by CAR_TYPE asc;
