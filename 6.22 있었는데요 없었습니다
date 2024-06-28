@@ -1,0 +1,14 @@
+select
+    ANIMAL_ID,
+    NAME
+from(   select 
+            ai.ANIMAL_ID,
+            ai.NAME,
+            ai.DATETIME ai_date,
+            ao.DATETIME ao_date
+        from ANIMAL_INS ai
+            left join ANIMAL_OUTS ao
+            on ai.ANIMAL_ID = ao.ANIMAL_ID
+     ) a
+where ai_date > ao_date 
+order by ai_date asc
