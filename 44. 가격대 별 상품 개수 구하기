@@ -1,0 +1,8 @@
+select
+    case
+        when PRICE < 10000 then 0
+        else truncate(PRICE, -4) end PRICE_GORUP,
+    COUNT(PRODUCT_ID) PRODUCTS
+from PRODUCT
+group by 1
+order by 1
